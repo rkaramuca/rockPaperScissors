@@ -44,6 +44,12 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function disableButtons() {
+    rock.disabled = true;
+    paper.disabled = true;
+    scissors.disabled = true;
+}
+
 // plays a round, adds points, and determines a winner
 function game(playerSelection) {
     // prompts the player for an input and saves the output phrase to the winner variable to determine who won using if/else if/ else 
@@ -69,18 +75,13 @@ function game(playerSelection) {
     // if the player has won
     if (playerScore === 5) {
         winMessage.innerText = "You win! You beat the computer.";
-        rock.disabled = true;
-        paper.disabled = true;
-        scissors.disabled = true;
+        disableButtons();
     }
     // if the computer has won
     if (cpuScore === 5) {
         winMessage.innerText = "Computer wins :( Better luck next time.";
-        rock.disabled = true;
-        paper.disabled = true;
-        scissors.disabled = true;
+        disableButtons();
     }
-
     round++;
 }
 
