@@ -37,7 +37,6 @@ function playRound(playerSelection, computerSelection) {
 function game(playerSelection) {
     // prompts the player for an input and saves the output phrase to the winner variable to determine who won using if/else if/ else 
     let winner = playRound(playerSelection, computerPlay());
-    round++;
 
     // if the player wins
     if (winner === 2) {
@@ -70,6 +69,8 @@ function game(playerSelection) {
         paper.disabled = true;
         scissors.disabled = true;
     }
+
+    round++;
 }
 
 // add button events
@@ -91,5 +92,5 @@ reset.addEventListener('click', function() {
     cpuScore = 0;
     player.innerText = 'Player:';
     computer.innerText = 'Computer:';
-    round = 0;
+    round = 1;
 })
