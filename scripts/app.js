@@ -90,7 +90,7 @@ reset.addEventListener('click', function() {
     scissors.disabled = false;
     playerScore = 0;
     cpuScore = 0;
-    player.innerText = 'Player:';
-    computer.innerText = 'Computer:';
+    player.innerText = 'Player: 0';
+    computer.innerText = 'Computer: 0';
     round = 1;
 })
