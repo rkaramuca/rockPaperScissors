@@ -1,3 +1,4 @@
+// document selectors
 const player = document.querySelector('#human');
 const computer = document.querySelector('#cpu');
 const winMessage = document.querySelector('#winner');
@@ -5,9 +6,13 @@ const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 const reset = document.querySelector('#resetButton');
+
+// scores and selections
 let playerScore = 0;
 let cpuScore = 0;
 let round = 1;
+let playerChoice = '';
+let cpuChoice = '';
 
 // pick a random selection for the computer
 function computerPlay() {
@@ -21,14 +26,20 @@ function computerPlay() {
 // play a round and return the result as an int
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
+        playerChoice = playerSelection;
+        cpuChoice = computerSelection;
         return 0;
     }
     // all 'losing' conditions for the player return losing message
     else if (playerSelection === "Rock" && computerSelection === "Paper" || playerSelection === "Paper" && computerSelection === "Scissors" || playerSelection === "Scissors" && computerSelection === "Rock") {
+        playerChoice = playerSelection;
+        cpuChoice = computerSelection;
         return 1;
     }
     // all 'winning' conditions for the player return winning message
     else if (computerSelection === "Rock" && playerSelection === "Paper" || computerSelection === "Paper" && playerSelection === "Scissors" || computerSelection === "Scissors" && playerSelection === "Rock") {
+        playerChoice = playerSelection;
+        cpuChoice = computerSelection;
         return 2;
     }
 }
@@ -42,13 +53,13 @@ function game(playerSelection) {
     if (winner === 2) {
         playerScore++;
         player.innerText = `Player: ${playerScore}`;
-        winMessage.innerText = `Round ${round}: You won that round!`;
+        winMessage.innerText = `Round ${round}: You won that round! ${playerChoice} beats ${cpuChoice}.`;
     }
     // if computer wins
     else if (winner === 1) {
         cpuScore++;
         computer.innerText = `Computer: ${cpuScore}`;
-        winMessage.innerText = `Round ${round}: Computer won that round :(`;
+        winMessage.innerText = `Round ${round}: Computer won that round :( ${cpuChoice} beats ${playerChoice}.`;
     }
     // if a draw
     else if (winner === 0) {
@@ -84,6 +95,7 @@ scissors.addEventListener('click', function() {
     game("Scissors");
 })
 reset.addEventListener('click', function() {
+    // reset buttons, scores, and text
     winMessage.innerText = 'Click your selection to start the game!';
     rock.disabled = false;
     paper.disabled = false;
@@ -92,5 +104,7 @@ reset.addEventListener('click', function() {
     cpuScore = 0;
     player.innerText = 'Player: 0';
     computer.innerText = 'Computer: 0';
+    playerChoice = '';
+    cpuChoice = '';
     round = 1;
 })
