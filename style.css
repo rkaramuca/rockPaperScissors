@@ -1,0 +1,140 @@
+/* CSS RESET */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/******************************************************************************/
+
+/* General Styling */
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #0B0C10;
+}
+
+/* Main Container */
+.flexbox {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Rock Paper Scissors! title */
+.heading {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.heading h1 {
+    color: #C5C6C7;
+    font-size: 3em;
+}
+
+/* Shows Player: Computer: scores */
+.points {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+.points span {
+    color: #C5C6C7;
+    padding: 50px;
+}
+
+/* Display the winner when that event triggers */
+.winner {
+    color: #C5C6C7;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+/* Buttons container */
+.choices {
+    align-items: center;
+    display: flex;
+    height: 60vh;
+    justify-content: center;
+    margin-top: -150px;
+    width: 100vw;
+}
+
+.choices button {
+    background-color: #1F2833;
+    border: 4px solid #66FCF1;
+    border-radius: 7%;
+    color: #C5C6C7;
+    font-size: 35px;
+    height: 150px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 150px;
+}
+
+.choices button:disabled {
+    opacity: 60%;
+}
+
+/* Reset Button */
+.reset {
+    display: flex;
+    justify-content: center;
+    margin-top: -100px;
+    width: 100vw;
+}
+
+.reset button {
+    background-color: #1F2833;
+    border: 4px solid #66FCF1;
+    border-radius: 7%;
+    color: #C5C6C7;
+    font-size: 20px;
+    height: 50px;
+    width: 100px;
+}
